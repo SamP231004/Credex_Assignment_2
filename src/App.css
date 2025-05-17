@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+.cursor-custom {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  backdrop-filter: invert(1);
+}
+
+.reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-text {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), 
+              opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal-text.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.scale-in {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), 
+              opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.scale-in.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.service-card:hover .service-card-content {
+  transform: translateY(0);
+}
+
+.service-card-content {
+  transform: translateY(calc(100% - 80px));
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.animated-border:hover::after {
+  width: 100%;
+}
+
+.hover-underline {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: #000;
+  transform: translateY(100%);
+}
+
+.page-transition.active {
+  transform: translateY(0);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.page-transition.exit {
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
