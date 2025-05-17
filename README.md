@@ -4,7 +4,7 @@ Welcome to **Central Axis**, a clean and responsive web interface built using **
 It’s fast, minimal, and designed for modern user experience.
 
 🌐 **Live Preview**  
-👉 [Click Here to View](https://zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3--5173--4d9fd228.local-credentialless.webcontainer-api.io/)
+👉 [Click Here to View](https://credex-assignment-2.vercel.app/)
 
 ---
 
